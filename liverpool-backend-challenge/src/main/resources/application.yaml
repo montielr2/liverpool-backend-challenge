@@ -1,3 +1,9 @@
 spring:
   application:
     name: liverpool-backend-challenge
+  mongodb:
+    uri: mongodb://localhost:27017/liverpooldb
+
+server:
+  port: 8081
+
