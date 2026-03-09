@@ -25,21 +25,22 @@ public class OrdersClient implements OrdersProviderPort {
     @Override
     public List<String> findOrderRefsByUserId(String userId) {
         try {
-            List<OrderResponse> orders = restClient.get().uri("/pedidos").retrieve().body(new ParameterizedTypeReference<List<OrderResponse>>() {});
+            List<OrderResponse> orders = restClient.get().uri("/pedidos").retrieve().body(new ParameterizedTypeReference<List<OrderResponse>>() {
+            });
 
-            if(orders == null || orders.isEmpty())
+            if (orders == null || orders.isEmpty())
                 return Collections.emptyList();
 
             List<String> result = new ArrayList<>();
 
-            for(OrderResponse order : orders) {
+            for (OrderResponse order : orders) {
 
-                if(!userId.equals(order.getUserId()))
+                if (!userId.equals(order.getUserId()))
                     continue;
 
                 String orderRef = order.getOrderRef();
 
-                if(!result.contains(orderRef))
+                if (!result.contains(orderRef))
                     result.add(orderRef);
             }
 
@@ -52,9 +53,10 @@ public class OrdersClient implements OrdersProviderPort {
     @Override
     public List<Order> getOrders() {
 
-        List<Order> orders = restClient.get().uri("/pedidos").retrieve().body(new ParameterizedTypeReference<List<Order>>() {});
+        List<Order> orders = restClient.get().uri("/pedidos").retrieve().body(new ParameterizedTypeReference<List<Order>>() {
+        });
 
-        if(orders == null || orders.isEmpty())
+        if (orders == null || orders.isEmpty())
             return Collections.emptyList();
 
         return orders;

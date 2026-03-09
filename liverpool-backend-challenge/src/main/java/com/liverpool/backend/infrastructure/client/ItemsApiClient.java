@@ -19,6 +19,7 @@ public class ItemsApiClient {
         return restClient.get()
                 .uri("https://6994a4eab081bc23e9c0f61e.mockapi.io/api/v1/items")
                 .retrieve()
-                .body(new ParameterizedTypeReference<List<OrderItem>>() {});
+                .body(new ParameterizedTypeReference<List<OrderItem>>() {
+                });
     }
 }

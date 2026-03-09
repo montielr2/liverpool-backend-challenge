@@ -10,7 +10,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class CustomerMapper {
-    private CustomerMapper() {}
+    private CustomerMapper() {
+    }
 
     public static Customer toDomain(CreateCustomerRequest request) {
         Customer customer = new Customer();

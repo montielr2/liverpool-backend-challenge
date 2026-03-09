@@ -24,7 +24,9 @@ public class CustomerDocument {
     public static class OrderDocument {
         private String orderRef;
 
-        public OrderDocument() {}
+        public OrderDocument() {
+        }
+
         public OrderDocument(String orderRef) {
             this.orderRef = orderRef;
         }

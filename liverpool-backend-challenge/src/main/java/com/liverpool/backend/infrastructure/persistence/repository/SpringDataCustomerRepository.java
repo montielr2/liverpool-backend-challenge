@@ -7,5 +7,6 @@ import java.util.Optional;
 
 public interface SpringDataCustomerRepository extends MongoRepository<CustomerDocument, String> {
     Optional<CustomerDocument> findByUserId(String userId);
+
     boolean existsByUserId(String userId);
 }
