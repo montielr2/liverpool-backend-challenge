@@ -1,6 +1,7 @@
 package com.liverpool.backend.infrastructure.client;
 
 import com.liverpool.backend.domain.exception.ExternalServiceException;
+import com.liverpool.backend.domain.model.Order;
 import com.liverpool.backend.domain.port.OrdersProviderPort;
 import com.liverpool.backend.infrastructure.client.dto.OrderResponse;
 import org.springframework.core.ParameterizedTypeReference;
@@ -46,5 +47,16 @@ public class OrdersClient implements OrdersProviderPort {
         } catch (RestClientException ex) {
             throw new ExternalServiceException("Error retrieving orders from external service", ex);
         }
+    }
+
+    @Override
+    public List<Order> getOrders() {
+
+        List<Order> orders = restClient.get().uri("/pedidos").retrieve().body(new ParameterizedTypeReference<List<Order>>() {});
+
+        if(orders == null || orders.isEmpty())
+            return Collections.emptyList();
+
+        return orders;
     }
 }
