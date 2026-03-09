@@ -10,14 +10,16 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OpenApiConfig {
-    @Bean
-    public OpenAPI customOpenAPI() {
-        return new OpenAPI()
-                .info(new Info().title("Liverpool Backend Challenge").version("v1")
-                        .description("API para gestión de clientes y búsqueda de órdenes")
-                        .contact(new Contact().name("Ray"))
-                        .license(new License().name("Internal Use")))
-                .externalDocs(new ExternalDocumentation()
-                        .description("Project documentation"));
-    }
+  @Bean
+  public OpenAPI customOpenAPI() {
+    return new OpenAPI()
+        .info(
+            new Info()
+                .title("Liverpool Backend Challenge")
+                .version("v1")
+                .description("API para gestión de clientes y búsqueda de órdenes")
+                .contact(new Contact().name("Ray"))
+                .license(new License().name("Internal Use")))
+        .externalDocs(new ExternalDocumentation().description("Project documentation"));
+  }
 }

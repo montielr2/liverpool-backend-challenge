@@ -11,23 +11,26 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class UseCaseConfig {
-    @Bean
-    public CreateCustomerUseCase createCustomerUseCase(CustomerRepositoryPort customerRepositoryPort) {
-        return new CreateCustomerUseCase(customerRepositoryPort);
-    }
+  @Bean
+  public CreateCustomerUseCase createCustomerUseCase(
+      CustomerRepositoryPort customerRepositoryPort) {
+    return new CreateCustomerUseCase(customerRepositoryPort);
+  }
 
-    @Bean
-    public GetCustomerUseCase getCustomerUseCase(CustomerRepositoryPort customerRepositoryPort) {
-        return new GetCustomerUseCase(customerRepositoryPort);
-    }
+  @Bean
+  public GetCustomerUseCase getCustomerUseCase(CustomerRepositoryPort customerRepositoryPort) {
+    return new GetCustomerUseCase(customerRepositoryPort);
+  }
 
-    @Bean
-    public UpdateCustomerUseCase updateCustomerUseCase(CustomerRepositoryPort customerRepositoryPort) {
-        return new UpdateCustomerUseCase(customerRepositoryPort);
-    }
+  @Bean
+  public UpdateCustomerUseCase updateCustomerUseCase(
+      CustomerRepositoryPort customerRepositoryPort) {
+    return new UpdateCustomerUseCase(customerRepositoryPort);
+  }
 
-    @Bean
-    public SyncCustomerOrdersUseCase syncCustomerOrdersUseCase(CustomerRepositoryPort customerRepositoryPort, OrdersProviderPort ordersProviderPort) {
-        return new SyncCustomerOrdersUseCase(customerRepositoryPort, ordersProviderPort);
-    }
+  @Bean
+  public SyncCustomerOrdersUseCase syncCustomerOrdersUseCase(
+      CustomerRepositoryPort customerRepositoryPort, OrdersProviderPort ordersProviderPort) {
+    return new SyncCustomerOrdersUseCase(customerRepositoryPort, ordersProviderPort);
+  }
 }

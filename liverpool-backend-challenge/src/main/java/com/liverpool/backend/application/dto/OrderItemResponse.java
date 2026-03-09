@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class OrderItemResponse {
-    private String itemId;
-    private String displayName;
+  private String itemId;
+  private String displayName;
 }

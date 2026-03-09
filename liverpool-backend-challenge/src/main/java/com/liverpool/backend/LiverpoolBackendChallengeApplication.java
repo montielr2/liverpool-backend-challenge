@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LiverpoolBackendChallengeApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(LiverpoolBackendChallengeApplication.class, args);
-    }
-
+  public static void main(String[] args) {
+    SpringApplication.run(LiverpoolBackendChallengeApplication.class, args);
+  }
 }

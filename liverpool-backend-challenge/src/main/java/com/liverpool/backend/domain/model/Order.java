@@ -10,9 +10,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
-    private String id;
-    private String orderRef;
-    private String orderStatus;
-    private String storeName;
-    private String itemId;
+  private String id;
+  private String orderRef;
+  private String orderStatus;
+  private String storeName;
+  private String itemId;
 }
